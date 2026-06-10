@@ -276,7 +276,9 @@
           </button>
         </div>
         <div class="video-frame reveal d1">
-          <image-slot id="explainer-b2c" shape="rect" placeholder="Drop your 1-minute explainer poster frame" fit="cover"></image-slot>
+          <video class="explainer-video" poster="media/explainer-poster.jpg" playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit">
+            <source src="media/explainer.mp4" type="video/mp4">
+          </video>
           <button class="play-btn" data-cta="video-b2c" aria-label="Play explainer video">
             <span class="ring"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
           </button>
@@ -595,7 +597,9 @@
     <div class="wrap on-dark">
       <div class="video-wrap">
         <div class="video-frame reveal">
-          <image-slot id="explainer-b2b" shape="rect" placeholder="Drop your VPP architecture explainer poster" fit="cover"></image-slot>
+          <video class="explainer-video" poster="media/explainer-poster.jpg" playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit">
+            <source src="media/explainer.mp4" type="video/mp4">
+          </video>
           <button class="play-btn" data-cta="video-b2b" aria-label="Play VPP explainer video">
             <span class="ring"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
           </button>
@@ -723,7 +727,9 @@
   <div class="modal video" role="dialog" aria-modal="true" aria-label="Explainer video">
     <button class="modal-x" data-close aria-label="Close">✕</button>
     <div class="lb-frame">
-      <image-slot id="explainer-lightbox" shape="rect" placeholder="Drop your 1-minute explainer video poster — it appears here and in the page" fit="contain"></image-slot>
+      <video id="lightboxVideo" poster="media/explainer-poster.jpg" controls playsinline preload="metadata" style="width:100%;height:100%;object-fit:contain;display:block;background:#000">
+        <source src="media/explainer.mp4" type="video/mp4">
+      </video>
     </div>
     <div class="lb-cap">
       <span id="lbCap">1-Minute Spoken Explainer · drop your poster frame to preview</span>

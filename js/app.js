@@ -273,6 +273,8 @@
     el.classList.remove('open');
     el.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    const v = el.querySelector('#lightboxVideo');
+    if (v) { try { v.pause(); } catch (e) {} }
   }
 
   /* =========================================================
@@ -280,13 +282,17 @@
      ========================================================= */
   const videoScrim = $('#videoScrim');
   const lbCap = $('#lbCap');
+  const lightboxVideo = $('#lightboxVideo');
   function openVideo(kind) {
     lbCap.textContent = kind === 'video-b2b'
-      ? '1-Minute VPP architecture explainer · drop your poster frame to preview'
-      : '1-Minute homeowner explainer · drop your poster frame to preview';
+      ? '1-Minute VPP architecture explainer'
+      : '1-Minute homeowner explainer';
     videoScrim.classList.add('open');
     videoScrim.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+    if (lightboxVideo) {
+      try { lightboxVideo.currentTime = 0; lightboxVideo.play(); } catch (e) {}
+    }
     trackEvent('video');
   }
 
